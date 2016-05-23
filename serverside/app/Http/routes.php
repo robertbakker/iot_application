@@ -20,5 +20,6 @@ Route::group(['prefix' => 'api/v0'], function() {
     Route::group(['prefix' => 'sensors'], function() {
 
         Route::resource('temperatures', '\App\Http\Controllers\Api\TemperatureController');
+        Route::resource('humidities', '\App\Http\Controllers\Api\HumidityController');
     });
 });
