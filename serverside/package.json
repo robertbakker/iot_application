@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "laravel-elixir": "^1.0.0"
+  },
+  "scripts": {
+    "build": "gulp --production",
+    "server": "php artisan serve",
+    "watch": "gulp watch"
+  }
+}
