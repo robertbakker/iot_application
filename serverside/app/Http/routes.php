@@ -11,15 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@index');
 
 Route::group(['prefix' => 'api/v0'], function() {
 
     Route::group(['prefix' => 'sensors'], function() {
 
-        Route::resource('temperatures', '\App\Http\Controllers\Api\TemperatureController');
+        Route::post('temperatures', '\App\Http\Controllers\Api\TemperatureController@store');
+        Route::get('temperatures/getAveragePerHour', '\App\Http\Controllers\Api\TemperatureController@getAveragePerHour');
         Route::resource('humidities', '\App\Http\Controllers\Api\HumidityController');
     });
 });

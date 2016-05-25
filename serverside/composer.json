@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
         "almasaeed2010/adminlte": "v2.3.3",
         "twbs/bootstrap": "v3.3.6",
-        "components/jquery": "^2.2"
+        "components/jquery": "^2.2",
+        "components/angular.js": "^1.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

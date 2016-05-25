@@ -35,8 +35,8 @@
     </style>
     <script type="text/javascript">
 
-        google.charts.load('current', {'packages': ['corechart']});
-        google.charts.setOnLoadCallback(init);
+//        google.charts.load('current', {'packages': ['corechart']});
+//        google.charts.setOnLoadCallback(init);
 
         function init() {
 
@@ -101,8 +101,30 @@
 
         }
 
-        function updateChart() {
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
 
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Hour', 'Temperature'],
+                    @foreach($temperatures as $temp)
+                    ['{{ $temp->hour }}', {{$temp->value}}],
+                    @endforeach
+            ]);
+
+            var options = {
+                title: 'Temperatures',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                hAxis: {
+                    slantedText: true,
+                    slantedTextAngle: 45 // here you can even use 180
+                }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
         }
     </script>
 @endsection
