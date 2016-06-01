@@ -1,0 +1,126 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300);
+@import url(http://fonts.googleapis.com/css?family=Enriqueta:400,700);
+body {
+  background: #F6F6F7;
+}
+chart-legend {
+  display: none;
+}
+.b-btn {
+  background: #67BF95;
+  padding: 0.65em 1.3em;
+  outline: none;
+  border: none;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+}
+.b-btn:hover {
+  background: #3D4B60;
+}
+.bg {
+  background: url(/static/images/head-bg.jpg) no-repeat 0px 0px;
+  background-size: cover;
+}
+.hero {
+  padding: 3em 0 3em;
+}
+.hero .hero-left {
+  font-family: 'Enriqueta', serif;
+}
+.hero .hero-left h1 {
+  color: #FFF;
+  font-size: 3.5em;
+}
+.hero .hero-left p {
+  color: #e8edf5;
+  font-size: 1.5em;
+  width: 64%;
+  margin: 2em 0 2.5em;
+}
+@media (max-width: 992px) {
+  .hero .hero-left p {
+    width: 100%;
+  }
+}
+.hero .hero-right {
+  padding-top: 3em;
+}
+@media (max-width: 992px) {
+  .hero .hero-right {
+    display: none;
+  }
+}
+.inspiring-quote {
+  text-align: center;
+  background: #E9EAED;
+}
+.inspiring-quote h4 {
+  color: #4B596C;
+  font-size: 2.3em;
+  margin: 1em;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8em;
+  font-weight: 600;
+}
+.temperature-chart {
+  padding: 5em 0;
+}
+.temperature-chart h2 {
+  color: #505965;
+  font-size: 3.2em;
+  font-family: 'Enriqueta', serif;
+}
+.temperature-chart p {
+  color: #4B596C;
+  font-size: 1.4em;
+  margin: 1em 0 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8em;
+}
+.daily-temperature-chart {
+  text-align: center;
+  background: #52ad81;
+  padding-top: 2.5em;
+  padding-bottom: 5em;
+}
+.daily-temperature-chart h3 {
+  color: #FFF;
+  font-size: 3em;
+  margin: 0.8em 0 0;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8em;
+  font-weight: 600;
+}
+.daily-temperature-chart p {
+  color: #FFF;
+  font-size: 2em;
+  margin: 0 0 1em 0;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8em;
+  font-weight: 100;
+}
+.daily-temperature-chart .chart-container {
+  background: #fff;
+}
+.humidity-data {
+  text-align: center;
+  padding-bottom: 7em;
+}
+.humidity-data h2 {
+  color: #37414E;
+  font-size: 2.5em;
+  margin: 0.8em 0 0;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8em;
+  font-weight: 600;
+}
+.humidity-data p {
+  color: #858B93;
+  font-size: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8em;
+  font-weight: 100;
+  width: 80%;
+  margin: 0 auto 3em auto;
+}

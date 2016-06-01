@@ -1,0 +1,32 @@
+{
+  "name": "iot-application",
+  "private": true,
+  "version": "0.0.0",
+  "dependencies": {
+    "browserify": "^13.0.1",
+    "browserify-shim": "^3.8.12",
+    "envify": "^3.4.0",
+    "less": "^2.7.1"
+  },
+  "devDependencies": {
+    "watchify": "~0.4.1",
+    "catw": "~0.2.0"
+  },
+  "scripts": {
+    "watch-css": "catw -c 'lessc -' 'project/assets/less/*.less' -o public/css/app.css -v",
+    "watch-js": "watchify project/assets/js/*.js --s app -o public/js/app.js -dv",
+    "watch": "npm run watch-css & npm run watch-js",
+    "build-css": "catw -c 'lessc -' 'project/assets/less/*.less' > public/css/app.css",
+    "build-js": "browserify project/assets/js/*.js --s app > public/js/app.js",
+    "build": "npm run build-css && npm run build-js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "angular": "global:angular",
+    "app": "global:app"
+  }
+}

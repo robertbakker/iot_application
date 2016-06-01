@@ -1,0 +1,135 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300);
+@import url(http://fonts.googleapis.com/css?family=Enriqueta:400,700);
+
+body {
+    background: #F6F6F7;
+}
+
+chart-legend {
+    display: none;
+}
+
+.b-btn {
+    background: #67BF95;
+    padding: 0.65em 1.3em;
+    outline: none;
+    border: none;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    &:hover {
+        background: #3D4B60;
+    }
+}
+
+.bg {
+    background: url(/static/images/head-bg.jpg) no-repeat 0px 0px;
+    background-size: cover;
+}
+
+.hero {
+    padding: 3em 0 3em;
+    .hero-left {
+        font-family: 'Enriqueta', serif;
+        h1 {
+            color: #FFF;
+            font-size: 3.5em;
+        }
+        p {
+            color: lighten(#C5D2E5, 10%);
+            font-size: 1.5em;
+            width: 64%;
+            margin: 2em 0 2.5em;
+            @media (max-width: 992px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .hero-right {
+        padding-top: 3em;
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+}
+
+.inspiring-quote {
+    text-align: center;
+    background: #E9EAED;
+    h4 {
+        color: #4B596C;
+        font-size: 2.3em;
+        margin: 1em;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.8em;
+        font-weight: 600;
+    }
+}
+
+.temperature-chart {
+    padding: 5em 0;
+    h2 {
+        color: #505965;
+        font-size: 3.2em;
+        font-family: 'Enriqueta', serif;
+    }
+    p {
+        color: #4B596C;
+        font-size: 1.4em;
+        margin: 1em 0 1.5em;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.8em;
+    }
+}
+
+
+.daily-temperature-chart {
+    text-align: center;
+    background: #52ad81;
+    padding-top: 2.5em;
+    padding-bottom: 5em;
+    h3 {
+        color: #FFF;
+        font-size: 3em;
+        margin: 0.8em 0 0;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.8em;
+        font-weight: 600;
+    }
+
+    p {
+        color: #FFF;
+        font-size: 2em;
+        margin: 0 0 1em 0;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.8em;
+        font-weight: 100;
+    }
+
+    .chart-container {
+        background: #fff;
+    }
+}
+
+.humidity-data {
+    text-align: center;
+    padding-bottom: 7em;
+    h2 {
+        color: #37414E;
+        font-size: 2.5em;
+        margin: 0.8em 0 0;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.8em;
+        font-weight: 600;
+    }
+    p {
+        color: #858B93;
+        font-size: 1.5em;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.8em;
+        font-weight: 100;
+        width: 80%;
+        margin: 0 auto 3em auto;
+    }
+}

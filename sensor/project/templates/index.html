@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html ng-app="iotApp">
+<head>
+    <title>IOT Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="/static/vendor/odometer-theme-default.css">
+    <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+<div class="bg">
+    <div class="container">
+        <div class="hero row">
+            <div class="hero-left col-md-8">
+                <h1 ng-controller="WebSocketController">Current room<br /> temperature: 
+                  <span odometer="WebSocketData.collection[WebSocketData.collection.length -1].temperature"></span> &deg;C
+                </h1>
+                <p>
+                  It can be important to know if you are in a safe environment. Some might like it hot, but extreme heat can overpower the human body. Heat exhaustion is a relatively common reaction to severe heat and can include symptoms such as dizziness, headache and fainting.
+                </p>
+            </div>
+            <div class="hero-right col-md-4">
+                <img src="/static/images/temperature.png" class="img-responsive" alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="temperature-chart">
+    <div class="container" ng-controller="TemperatureChartController">
+        <div class="col-md-12">
+            <h2>Average temperature per hour<br/><small>for the last 20 measured hours</small></h2>
+            <canvas class="chart chart-line" chart-data="data"
+                    chart-labels="labels" chart-legend="true" chart-series="series" ng-show="loaded">
+            </canvas>
+            <button class="btn btn-primary btn-lg b-btn" ng-click="loadChart()" ng-hide="loaded">Load Data</button>
+        </div>
+    </div>
+</div>
+
+<div class="daily-temperature-chart">
+    <div class="container" ng-controller="DailyTemperatureChartController">
+        <h3>Average daily temperature</h3>
+        <p>per measured day</p>
+          <canvas class="chart chart-bar" chart-data="data"
+                  chart-labels="labels" chart-legend="true" chart-series="series" ng-show="loaded">
+          </canvas>
+          <button class="btn btn-primary btn-lg b-btn" ng-click="loadChart()" ng-hide="loaded">Load Data</button>
+    </div>
+</div>
+
+<div class="humidity-data">
+    <div class="container">
+        <h2 ng-controller="WebSocketController">Current humidity levels: {{ '{{WebSocketData.collection[WebSocketData.collection.length -1].humidity}}' }} %</h2>
+        <p>A humid environment is a breeding ground for all sorts of microscopic organisms that can harm your health. Mildew and mold spores thrive in it, and they can be highly toxic once they get into your body. If mold is clearly visible inside your home, you have a problem that needs immediate attention. Even if there are no signs, mold and mildew can still spread throughout the vents, or behind walls.</p>
+        <table class="table table-striped table-bordered" ng-controller="WebSocketController">
+          <tr>
+            <th>#</th>
+            <td>Humidity (%)</td>
+          </tr>
+          <tr ng-repeat="data in WebSocketData.collection | reverse | limitTo:10 track by $index">
+            <td>{{ '{{ WebSocketData.collection.length - $index }}' }}</td>
+            <td>{{ '{{data.humidity | commas }}' }}</td>
+          </tr>
+        </table> 
+    </div>
+</div>
+<div class="inspiring-quote">
+    <div class="container">
+        <h4>Have a nice day!</h4>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-websocket/2.0.0/angular-websocket.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/0.10.2/angular-chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.min.js"></script>
+<script src="/static/js/app.js"></script>
+<script>
+app.constant('WEBSOCKET_URL', '{{ websocket_url }}');
+app.constant('API_URL', '{{ api_url }}');
+</script>
+</body>
+</html>
+
