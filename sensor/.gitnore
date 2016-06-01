@@ -1,7 +1,0 @@
-/vendor
-/node_modules
-/venv
-.env
-/.idea
-*.pyc
-npm-debug.log
