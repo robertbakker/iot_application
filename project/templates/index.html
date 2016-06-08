@@ -13,7 +13,8 @@
         <div class="hero row">
             <div class="hero-left col-md-8">
                 <h1 ng-controller="WebSocketController">Current room<br /> temperature: 
-                  <span odometer="WebSocketData.collection[WebSocketData.collection.length -1].temperature"></span> &deg;C
+                  <span odometer="WebSocketData.collection[WebSocketData.collection.length -1].temperature"></span> &deg;C <br />
+                  Difference to Amsterdam: <span temp-diff="WebSocketData.collection[WebSocketData.collection.length -1].temperature"></span> &deg;C
                 </h1>
                 <p>
                   It can be important to know if you are in a safe environment. Some might like it hot, but extreme heat can overpower the human body. Heat exhaustion is a relatively common reaction to severe heat and can include symptoms such as dizziness, headache and fainting.

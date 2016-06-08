@@ -7,7 +7,7 @@ measure = False
 if len(sys.argv) == 4:
   host = sys.argv[1]
   port = sys.argv[2]
-  measure_interval = sys.argv[3]
+  measure_interval = float(sys.argv[3])
   measure = True
 else:
   print('usage: sudo ./websocket-app.py <host> <port> <measure interval in seconds>')
@@ -23,6 +23,6 @@ if __name__ == "__main__":
 
   from gevent.pywsgi import WSGIServer
   from geventwebsocket.handler import WebSocketHandler
-  http_server = WSGIServer((host,port), app, handler_class=WebSocketHandler)
+  http_server = WSGIServer((host,int(port)), app, handler_class=WebSocketHandler)
   print("Server started on " + host + ":" + str(port))
   http_server.serve_forever()
