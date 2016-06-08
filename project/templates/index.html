@@ -65,12 +65,34 @@
         </table> 
     </div>
 </div>
+
+<div class="daily-temperature-chart">
+    <div class="container" ng-controller="MapController">
+        <h3>See temperature in other cities</h3>
+        <div ng-show="loaded">
+            <table class="table table-striped">
+                <tr>
+                    <th>City</th>
+                    <td>{{ '{{ name }}' }}</td>
+                </tr>
+                <tr>
+                    <th>Temperature</th>
+                    <td>{{ '{{ temp | commas }}' }}</td>
+                </tr>
+            </table>
+        </div>
+   <div id="map"></div>
+    
+
+    </div>
+</div>
+
 <div class="inspiring-quote">
     <div class="container">
         <h4>Have a nice day!</h4>
     </div>
 </div>
-
+<script src="http://maps.googleapis.com/maps/api/js?key=&sensor=false&extension=.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-websocket/2.0.0/angular-websocket.min.js"></script>

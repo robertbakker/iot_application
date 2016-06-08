@@ -5,6 +5,7 @@ var chart = require('./chart');
 var daychart = require('./daychart');
 var odometer = require('./odometer');
 var tempDiff = require('./temp_diff');
+var map = require('./map');
 
 var app = angular.module('iotApp', [
     'angular-websocket',
@@ -13,6 +14,7 @@ var app = angular.module('iotApp', [
     websocket.name,
     tempDiff.name,
     chart.name,
+    map.name,
     daychart.name,
 ]);
 
