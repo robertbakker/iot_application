@@ -10,8 +10,8 @@ if len(sys.argv) == 4:
   measure_interval = float(sys.argv[3])
   measure = True
 else:
-  print('usage: sudo ./websocket-app.py <host> <port> <measure interval in seconds>')
-  print('example: sudo ./websocket-app.py 0.0.0.0 8000 1 - Open server on 0.0.0.0:8000 and measure every second')
+  print('usage: sudo ./app.py <host> <port> <measure interval in seconds>')
+  print('example: sudo ./app.py 0.0.0.0 8000 1 - Open server on 0.0.0.0:8000 and measure every second')
   host = '0.0.0.0'
   port = 8000
   measure_interval = 60
