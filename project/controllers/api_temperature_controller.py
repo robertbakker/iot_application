@@ -16,6 +16,7 @@ def api_temperatures():
 
   if request.method == 'POST':
     value = request.form['temperature']
+    temperatures.add(float(value))
     return _json_response({
       'success': True
     }) 
