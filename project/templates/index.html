@@ -51,9 +51,9 @@
 
 <div class="humidity-data">
     <div class="container">
-        <h2 ng-controller="WebSocketController">Current humidity levels: {{ '{{WebSocketData.collection[WebSocketData.collection.length -1].humidity}}' }} %</h2>
+        <h2 ng-controller="WebSocketController">Current humidity levels: {{ '{{WebSocketData.collection[WebSocketData.collection.length -1].humidity }}' }} %</h2>
         <p>A humid environment is a breeding ground for all sorts of microscopic organisms that can harm your health. Mildew and mold spores thrive in it, and they can be highly toxic once they get into your body. If mold is clearly visible inside your home, you have a problem that needs immediate attention. Even if there are no signs, mold and mildew can still spread throughout the vents, or behind walls.</p>
-        <table class="table table-striped table-bordered" ng-controller="WebSocketController">
+        <table class="table table-striped table-bordered" style="height: 408px" ng-controller="WebSocketController">
           <tr>
             <th>#</th>
             <td>Humidity (%)</td>
@@ -68,16 +68,24 @@
 
 <div class="daily-temperature-chart">
     <div class="container" ng-controller="MapController">
-        <h3>See temperature in other cities</h3>
-        <div ng-show="loaded">
+        <h3>Compare temperature in other cities</h3>
+        <div>
             <table class="table table-striped">
                 <tr>
                     <th>City</th>
                     <td>{{ '{{ name }}' }}</td>
                 </tr>
                 <tr>
-                    <th>Temperature</th>
-                    <td>{{ '{{ temp | commas }}' }}</td>
+                    <th>City Temperature</th>
+                    <td>{{ '{{ temp }}' }} &deg; C</td>
+                </tr>
+                <tr>
+                    <th>Room temperature</th>
+                    <td ng-controller="WebSocketController">{{ '{{WebSocketData.collection[WebSocketData.collection.length -1].temperature }}'}}  &deg; C</td>
+                </tr>
+                <tr>
+                    <th>Difference</th>
+                    <td ng-controller="WebSocketController">{{ '{{(WebSocketData.collection[WebSocketData.collection.length -1].temperature - temp).toFixed(1) }}'}} &deg; C</td>
                 </tr>
             </table>
         </div>
